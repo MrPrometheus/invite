@@ -28,7 +28,7 @@ const getDate = (mil: number) => {
 }
 
 export default function Home() {
-    const timer = useRef< NodeJS.Timer>()
+    const timer = useRef< NodeJS.Timeout>()
 
     const [date, setDate] = useState(deadline - Date.now())
 

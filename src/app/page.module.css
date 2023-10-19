@@ -165,6 +165,7 @@
 }
 
 .inputContainer > input {
+  color: black;
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   width: 100%;

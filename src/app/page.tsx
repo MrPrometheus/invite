@@ -48,7 +48,7 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
-        const client = createClient();
+        const client = createClient({connectionString: "postgres://default:cbiTdsh61Cux@ep-dawn-shape-65068163.eu-central-1.postgres.vercel-storage.com:5432/verceldb"});
         await client.connect();
         await client.sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
         await client.end();

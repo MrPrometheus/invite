@@ -1,10 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import styles from './page.module.css'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
-import {sql} from "@vercel/postgres";
+import {createClient} from "@vercel/postgres";
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -48,8 +47,10 @@ export default function Home() {
 
     const [value, setValue] = useState("")
 
-    const handleClick = (agreement: boolean) => {
-        sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
+    const handleClick = async (agreement: boolean) => {
+        const client = createClient();
+        await client.connect();
+        client.sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
     }
 
   return (

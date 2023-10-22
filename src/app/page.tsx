@@ -50,7 +50,8 @@ export default function Home() {
     const handleClick = async (agreement: boolean) => {
         const client = createClient();
         await client.connect();
-        client.sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
+        await client.sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
+        await client.end();
     }
 
   return (

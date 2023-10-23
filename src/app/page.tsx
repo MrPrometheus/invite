@@ -85,7 +85,7 @@ export default function Home() {
               <motion.div
                   className={styles.date}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, top: "75%" }}
+                  animate={{ opacity: 1, top: "80%" }}
                   transition={{ duration: 1.5 }}
               >
                   16 Декабря 2023
@@ -94,7 +94,7 @@ export default function Home() {
       </div>
         <div className={styles.fraza1Container}>
             <div>
-                <Image style={{width: "100%", height: "auto", borderRadius: "32px"}} src="/photo_2_2023-10-23_20-52-46.jpg" alt="1" width={1280} height={942}></Image>
+                <Image style={{width: "100%", height: "auto", borderRadius: "32px"}} src="/1im.jpg" alt="1" width={1280} height={1099}></Image>
             </div>
             <div className={styles.fraza}>
                 "Истинная любовь похожа на привидение: все о ней говорят, но мало кто ее видел" -<br/>Француа де Ларошфуко

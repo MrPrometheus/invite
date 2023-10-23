@@ -6,10 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Амир & Дилия | Приглашение',
-    metadataBase: new URL(process.env.NODE_ENV === "production" ? "https://invite-fmmn1ed7z-amirs-projects-d0094b72.vercel.app/" : "http://localhost:3000"),
+    metadataBase: new URL("http://localhost:3000"),
       openGraph: {
         title: 'Амир & Дилия | Приглашение',
-        url: 'https://invite-fmmn1ed7z-amirs-projects-d0094b72.vercel.app/',
         images: [
           {
             url: '/fonpng.png',

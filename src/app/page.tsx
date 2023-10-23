@@ -54,6 +54,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+            <Image className={styles.bg} src="/fon.jfif" alt="fon" width={640} height={1136} />
       <div className={styles.mainContent}>
           <AnimatePresence>
               <motion.div

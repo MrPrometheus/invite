@@ -250,10 +250,17 @@
 @media (max-width: 800px) {
   .fraza1Container {
     grid-template-columns: 1fr;
+    gap: 10%;
   }
   .fraza {
     font-size: 30px;
   }
+
+  .fraza2 {
+    padding-top: 20px;
+    margin-bottom: 15px;
+  }
+
   .downTimer {
     display: grid;
     grid-template-columns: 1fr 1fr;

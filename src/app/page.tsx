@@ -3,7 +3,6 @@
 import styles from './page.module.css'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
-import {createClient} from "@vercel/postgres";
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -48,10 +47,12 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
-        const client = createClient({connectionString: "postgres://default:cbiTdsh61Cux@ep-dawn-shape-65068163.eu-central-1.postgres.vercel-storage.com:5432/verceldb"});
-        await client.connect();
-        await client.sql`INSERT INTO names (username, Agreement) VALUES (${value}, ${agreement ? 1 : 0});`
-        await client.end();
+        const names = await prisma.names.create({
+            data: {
+                username: value,
+                agreement: agreement ? 1 : 0
+            }
+        })
     }
 
   return (

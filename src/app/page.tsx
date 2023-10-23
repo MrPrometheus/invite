@@ -49,7 +49,7 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
-        fetch("/api/user", {})
+        fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
     }
 
   return (

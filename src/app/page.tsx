@@ -60,7 +60,7 @@ export default function Home() {
               <motion.div
                   className={styles.title1}
                   initial={{ opacity: 0, top: 0 }}
-                  animate={{ opacity: 1, top: "40%" }}
+                  animate={{ opacity: 1, top: "30%" }}
                   transition={{ duration: 1.5 }}
               >
                   Амир
@@ -68,7 +68,7 @@ export default function Home() {
               <motion.div
                   className={styles.title2}
                   initial={{ opacity: 0, top: 0 }}
-                  animate={{ opacity: 1, top: "50%" }}
+                  animate={{ opacity: 1, top: "40%" }}
                   transition={{ duration: 1.5 }}
               >
                   и
@@ -76,7 +76,7 @@ export default function Home() {
               <motion.div
                   className={styles.title3}
                   initial={{ opacity: 0, top: 0 }}
-                  animate={{ opacity: 1, top: "60%" }}
+                  animate={{ opacity: 1, top: "50%" }}
                   transition={{ duration: 1.5 }}
               >
                   Дилия
@@ -85,7 +85,7 @@ export default function Home() {
               <motion.div
                   className={styles.date}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, top: "80%" }}
+                  animate={{ opacity: 1, top: "75%" }}
                   transition={{ duration: 1.5 }}
               >
                   16 Декабря 2023

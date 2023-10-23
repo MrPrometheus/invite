@@ -5,7 +5,6 @@ import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
 
 import prisma from "../../prisma/prisma"
-import {json} from "stream/consumers";
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -50,7 +49,7 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
-        fetch("/api/set", { method: "POST", body: JSON.stringify({username: value, agreement: agreement ? 1 : 0})})
+        fetch("/api/user", {})
     }
 
   return (

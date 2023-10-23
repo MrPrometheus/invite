@@ -12,6 +12,7 @@
 }
 
 .title1 {
+  font-family: 'Marck Script', cursive;
   font-size: 72px;
   position: absolute;
   z-index: 2;
@@ -21,6 +22,7 @@
 }
 
 .title2 {
+  font-family: 'Marck Script', cursive;
   font-size: 72px;
   position: absolute;
   z-index: 2;
@@ -30,6 +32,7 @@
 }
 
 .title3 {
+  font-family: 'Marck Script', cursive;
   font-size: 72px;
   position: absolute;
   z-index: 2;
@@ -54,17 +57,22 @@
 .fraza1Container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 20%;
+  gap: 5%;
+  padding: 0 10%;
+  margin-bottom: 100px;
+  align-items: center;
 }
 
 .fraza2 {
   font-size: 30px;
+  padding: 0 10%;
 }
 
 .timeContainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 10%;
+  padding-bottom: 0;
 }
 
 .time {
@@ -119,6 +127,7 @@
 
 .fraza3 {
   font-size: 30px;
+  padding: 0 10%;
 }
 
 .actions {
@@ -181,7 +190,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
 }
 
 .timerSection {
@@ -190,6 +198,7 @@
   position: relative;
   margin-right: 60px;
   padding-right: 60px;
+  margin-bottom: 100px;
 }
 
 .timerSection:last-child {
@@ -222,5 +231,31 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 40px;
   margin-top: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 800px) {
+  .fraza1Container {
+    grid-template-columns: 1fr;
+  }
+  .fraza {
+    font-size: 30px;
+  }
+  .downTimer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .timerSection {
+    font-size: 30px;
+    padding-right: 30px;
+    margin-right: 30px;
+  }
+
+  .timerSection:nth-child(2):after {
+    display: none;
+  }
+
+  .timerTitle {
+    font-size: 30px;
+  }
 }

@@ -3,8 +3,7 @@
 import styles from './page.module.css'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
-
-import prisma from "../../prisma/prisma"
+import Image from "next/image";
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -49,6 +48,7 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
+        if(!value && value.length < 8) return
         fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
     }
 
@@ -92,32 +92,37 @@ export default function Home() {
           </AnimatePresence>
       </div>
         <div className={styles.fraza1Container}>
-            <div>картинки</div>
+            <div>
+                <Image style={{width: "100%", height: "auto", borderRadius: "32px"}} src="/photo_2_2023-10-23_20-52-46.jpg" alt="1" width={1280} height={942}></Image>
+            </div>
             <div className={styles.fraza}>
-                "Истинная любовь похожа на привидение: все о ней говорят, но мало кто ее видел" - Француа де Ларошфуко
+                "Истинная любовь похожа на привидение: все о ней говорят, но мало кто ее видел" -<br/>Француа де Ларошфуко
             </div>
         </div>
         <div className={styles.fraza2}>
             Если вы все-таки хотите ее увидеть, то мы ждем вас на нашей свадьбе 16 декабря 2023г!
         </div>
 
-        <div className={styles.timeContainer}>
-            <div className={styles.time}>15:15</div>
-            <div className={styles.timeDescription}>Сбор гостей на регистрацию</div>
-            <div className={styles.time}>15:30</div>
-            <div className={styles.timeDescription}>
-                <div>Начало регистрации брака</div>
-                <div className={styles.timeDescriptionSubtitle}>По адресу г. Йошкар-Ола, Набережная Брюгге, 5</div>
+            <div className={styles.timeContainer}>
+                <div className={styles.time}>15:15</div>
+                <div className={styles.timeDescription}>Сбор гостей на регистрацию</div>
+                <div className={styles.time}>15:30</div>
+                <div className={styles.timeDescription}>
+                    <div>Начало регистрации брака</div>
+                    <div className={styles.timeDescriptionSubtitle}>По адресу г. Йошкар-Ола, Набережная Брюгге, 5</div>
+                </div>
+                <div className={styles.time}>16:30</div>
+                <div className={styles.timeDescription}>
+                    <div>Сбор гостей и праздничный фуршет</div>
+                    <div className={styles.timeDescriptionSubtitle}>В ресторане "Камелот" на ул. Бульвар Победы, 5</div>
+                </div>
+                <div className={styles.time}>17:00</div>
+                <div className={styles.timeDescription}>
+                    <div>Начало банкета</div>
+                </div>
             </div>
-            <div className={styles.time}>16:30</div>
-            <div className={styles.timeDescription}>
-                <div>Сбор гостей и праздничный фуршет</div>
-                <div className={styles.timeDescriptionSubtitle}>В ресторане "Камелот" на ул. Бульвар Победы, 5</div>
-            </div>
-            <div className={styles.time}>17:00</div>
-            <div className={styles.timeDescription}>
-                <div>Начало банкета</div>
-            </div>
+        <div style={{padding: "0 10%", marginBottom: "50px"}}>
+            <Image style={{width: "100%", height: "auto", borderRadius: "32px"}} src="/photo_2023-10-23_21-05-08.jpg" alt="2" width={1280} height={1232}></Image>
         </div>
 
         <div className={styles.fraza3}>

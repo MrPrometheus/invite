@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={inter.className} style={{textAlign: "center"}}>
           {children}
       </body>
     </html>

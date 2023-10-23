@@ -1,13 +1,5 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 
-declare global {
-    namespace NodeJS {
-        interface Global {
-            prisma: PrismaClient;
-        }
-    }
-}
-
 let prisma: PrismaClient;
 
 if (typeof window === "undefined") {
@@ -20,6 +12,8 @@ if (typeof window === "undefined") {
 
         prisma = global.prisma;
     }
+} else {
+    prisma = global.prisma;
 }
 
 export default prisma;

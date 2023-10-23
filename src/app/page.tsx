@@ -52,7 +52,8 @@ export default function Home() {
         const names = await prisma.names.create({
             data: {
                 username: value,
-                agreement: agreement ? 1 : 0
+                agreement: agreement ? 1 : 0,
+                id: 1123
             }
         })
     }

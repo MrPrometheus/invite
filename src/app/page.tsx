@@ -50,7 +50,7 @@ export default function Home() {
     const [value, setValue] = useState("")
 
     const handleClick = async (agreement: boolean) => {
-        fetch("/api/set", {body: JSON.stringify({username: value, agreement: agreement ? 1 : 0})})
+        fetch("/api/set", { method: "POST", body: JSON.stringify({username: value, agreement: agreement ? 1 : 0})})
     }
 
   return (

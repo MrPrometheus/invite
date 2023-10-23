@@ -4,6 +4,8 @@ import styles from './page.module.css'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
 
+import prisma from "../../prisma/prisma"
+
 const deadline = (new Date(2023, 11, 16)).getTime();
 
 function declOfNum(number: number, titles: string[]) {

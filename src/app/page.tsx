@@ -57,7 +57,7 @@ export default function Home() {
         if(value.length > 8 && !sended) {
             setSended(true)
             setSendedType(agreement ? "1" : "2")
-            // fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
+            fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
         }
     }
 

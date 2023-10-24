@@ -50,10 +50,15 @@ export default function Home() {
     const dataView = getDate(date)
 
     const [value, setValue] = useState("")
+    const [sended, setSended] = useState(false)
+    const [sendedType, setSendedType] = useState<"1" | "2">()
 
     const handleClick = async (agreement: boolean) => {
-        if(!value && value.length < 8) return
-        fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
+        if(value.length > 8 && !sended) {
+            setSended(true)
+            setSendedType(agreement ? "1" : "2")
+            // fetch("/api/user", {method: "POST", body: JSON.stringify({username: value, agreement})})
+        }
     }
 
   return (
@@ -144,8 +149,13 @@ export default function Home() {
             <div className={styles.inputContainer}>
                 <input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Ваше имя и фамилия" />
             </div>
-            <button onClick={() => handleClick(true)}>Я приду!</button>
-            <button onClick={() => handleClick(false)} className={styles.secondary}>Не смогу прийти :(</button>
+            {sended && <div style={{fontSize: "30px", marginTop: "20px"}}>
+                {sendedType === "1" ? <>Мы вас ждем!</> : <>Очень жаль :(</>}
+            </div>}
+            {!sended && <>
+                <button onClick={() => handleClick(true)}>Я приду!</button>
+                <button onClick={() => handleClick(false)} className={styles.secondary}>Не смогу прийти :(</button>
+            </>}
         </div>
 
         <div className={styles.timerTitle}>До нашей свадьбы осталось...</div>

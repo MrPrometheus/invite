@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -125,6 +126,9 @@ export default function Home() {
         <div style={{padding: "0 10%", marginBottom: "50px"}}>
             <Image style={{width: "100%", height: "auto", borderRadius: "32px"}} src="/photo_2023-10-23_21-05-08.jpg" alt="2" width={1280} height={1232}></Image>
         </div>
+
+        <div style={{fontSize: "30px", padding: "0 10%", marginBottom: "30px"}}>Мы создали чат для общения и обмена фотографиями после мероприятия. Присоединяйтесь и будем на связи!</div>
+        <Link target="_blank" href="https://t.me/+yocN7Fxq0ds1MmEy"><Image style={{width: "100px", height: "auto", marginBottom: "30px"}} src="/icon_t.png" alt="3" width={512} height={512}></Image></Link>
 
         <div className={styles.fraza3}>
             Мы очень старались сделать праздник незабываемым, поэтому будем рады, если вы подтвердите свое присутствие до <span style={{fontWeight: "bold"}}>27.11.2023</span>

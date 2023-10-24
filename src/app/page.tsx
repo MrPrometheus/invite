@@ -5,6 +5,7 @@ import {AnimatePresence, motion} from 'framer-motion'
 import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {useSearchParams} from "next/navigation"
 
 const deadline = (new Date(2023, 11, 16)).getTime();
 
@@ -28,6 +29,8 @@ const getDate = (mil: number) => {
 }
 
 export default function Home() {
+    const params = useSearchParams()
+
     const timer = useRef< NodeJS.Timeout>()
 
     const [date, setDate] = useState(deadline - Date.now())
@@ -106,13 +109,15 @@ export default function Home() {
         </div>
 
             <div className={styles.timeContainer}>
-                <div className={styles.time}>15:15</div>
-                <div className={styles.timeDescription}>Сбор гостей на регистрацию</div>
-                <div className={styles.time}>15:30</div>
-                <div className={styles.timeDescription}>
-                    <div>Начало регистрации брака</div>
-                    <div className={styles.timeDescriptionSubtitle}>По адресу г. Йошкар-Ола, Набережная Брюгге, 5</div>
-                </div>
+                {params.get("a") === "6445b78d191f0b03d0cb57e83cf66ff0" && <>
+                    <div className={styles.time}>15:15</div>
+                    <div className={styles.timeDescription}>Сбор гостей на регистрацию</div>
+                    <div className={styles.time}>15:30</div>
+                    <div className={styles.timeDescription}>
+                        <div>Начало регистрации брака</div>
+                        <div className={styles.timeDescriptionSubtitle}>По адресу г. Йошкар-Ола, Набережная Брюгге, 5</div>
+                    </div>
+                </>}
                 <div className={styles.time}>16:30</div>
                 <div className={styles.timeDescription}>
                     <div>Сбор гостей и праздничный фуршет</div>

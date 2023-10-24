@@ -130,6 +130,7 @@ export default function Home() {
         <div style={{fontSize: "30px", padding: "0 10%", marginBottom: "30px"}}>Мы создали чат для общения и обмена фотографиями после мероприятия. Присоединяйтесь и будем на связи!</div>
         <Link target="_blank" href="https://t.me/+yocN7Fxq0ds1MmEy"><Image style={{width: "100px", height: "auto", marginBottom: "30px"}} src="/icon_t.png" alt="3" width={512} height={512}></Image></Link>
 
+
         <div className={styles.fraza3}>
             Мы очень старались сделать праздник незабываемым, поэтому будем рады, если вы подтвердите свое присутствие до <span style={{fontWeight: "bold"}}>27.11.2023</span>
         </div>

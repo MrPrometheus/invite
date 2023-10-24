@@ -235,6 +235,7 @@
 
 .timerValue {
   font-size: 40px;
+  min-width: 78px;
 }
 
 .timerName {
@@ -263,8 +264,8 @@
   }
 
   .timerSection {
-    padding-right: 10px;
-    margin-right: 10px;
+    padding-right: 0;
+    margin-right: 0;
   }
 
   .timerTitle {
